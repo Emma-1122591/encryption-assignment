@@ -1,2 +1,5 @@
 #ignore secret files
-key_file.json
+secret.key
+
+#ignore pychache
+__pycache__/
