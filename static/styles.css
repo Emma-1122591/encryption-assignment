@@ -8,12 +8,38 @@ p {
 }
 
 #text-input {
-    width: 50%;
     height: 200px;
     padding: 10px;
 }
 
+#encryption {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 50%;
+}
+
+#decryption {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 50%;
+}
+
+#encryption-form {
+    display: grid;
+}
+
+#decryption-form {
+    display: grid;
+}
+
 #encrypt-button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+}
+
+#decrypt-button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 5px;
 }
