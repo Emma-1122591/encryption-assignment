@@ -1,0 +1,5 @@
+#ignore secret files
+secret.key
+
+#ignore pychache
+__pycache__/

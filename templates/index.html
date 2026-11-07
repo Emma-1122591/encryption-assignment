@@ -13,11 +13,18 @@
             <p>Deze webapp krijgt een functie voor de symmetrische encryptie van tekst.</p>
         </section>
         <section>
-            <textarea id="text-input" placeholder="Voer hier de tekst in die je wilt versleutelen..."></textarea>
+            <h2>Encryptie</h2>
+            <form method="post">
+                <textarea id="text-input" name="text" type="textarea" placeholder="Voer hier de tekst in die je wilt versleutelen..."></textarea>
+                <button id="encrypt-button" type="submit">Versleutelen!</button>
+            </form>
         </section>
+        {% if encrypted_text %}
         <section>
-            <button id="encrypt-button">Versleutelen!</button>
+            <h2>Resultaat:</h2>
+            <p>{{ encrypted_text }}</p>
         </section>
+        {% endif %}
     </div>
 </body>
 </html>
