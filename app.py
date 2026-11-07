@@ -17,7 +17,7 @@ def index():
             text = request.form.get("text-decryption")
             key = load_key()
             fernet = Fernet(key)
-            decrypted_text = fernet.decrypt(text.encode()).decode()
+            decrypted_text = fernet.decrypt(text).decode()
             return render_template('index.html', decrypted_text=decrypted_text)          
     return render_template('index.html')
 
