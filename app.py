@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request
 from cryptography.fernet import Fernet
 from utils.key_loader import load_key
 
@@ -9,14 +9,12 @@ def index():
     if request.method == 'POST':
         if request.form.get("text-encryption"):
             text = request.form.get("text-encryption")
-            print(text)
             key = load_key()
             fernet = Fernet(key)
             encrypted_text = fernet.encrypt(text.encode())
             return render_template('index.html', encrypted_text=encrypted_text)
         elif request.form.get("text-decryption"):
             text = request.form.get("text-decryption")
-            print(text)
             key = load_key()
             fernet = Fernet(key)
             decrypted_text = fernet.decrypt(text.encode()).decode()
