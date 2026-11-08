@@ -12,17 +12,30 @@
             <h1>Symmetrische encryptie!</h1>
             <p>Deze webapp krijgt een functie voor de symmetrische encryptie van tekst.</p>
         </section>
-        <section>
+        <section id="encryption">
             <h2>Encryptie</h2>
-            <form method="post">
-                <textarea id="text-input" name="text" type="textarea" placeholder="Voer hier de tekst in die je wilt versleutelen..."></textarea>
+            <form method="post" id="encryption-form">
+                <textarea id="text-input" name="text-encryption" type="textarea" placeholder="Voer hier de tekst in die je wilt versleutelen..."></textarea>
                 <button id="encrypt-button" type="submit">Versleutelen!</button>
+            </form>
+        </section>
+        <section id="decryption">
+            <h2>Decryptie</h2>
+            <form method="post" id="decryption-form">
+                <textarea id="text-input" name="text-decryption" type="textarea" placeholder="Voer hier de tekst in die je wilt ontsleutelen..."></textarea>
+                <button id="decrypt-button" type="submit">Ontsleutelen!</button>
             </form>
         </section>
         {% if encrypted_text %}
         <section>
             <h2>Resultaat:</h2>
             <p>{{ encrypted_text }}</p>
+        </section>
+        {% endif %}
+        {% if decrypted_text %}
+        <section>
+            <h2>Resultaat:</h2>
+            <p>{{ decrypted_text }}</p>
         </section>
         {% endif %}
     </div>
