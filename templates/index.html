@@ -38,6 +38,11 @@
             <p>{{ decrypted_text }}</p>
         </section>
         {% endif %}
+        {% if error %}
+        <section>
+            <p>{{ error }}</p>
+        </section>
+        {% endif %}
     </div>
 </body>
 </html>
