@@ -8,17 +8,23 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         if request.form.get("text-encryption"):
-            text = request.form.get("text-encryption")
-            key = load_key()
-            fernet = Fernet(key)
-            encrypted_text = fernet.encrypt(text.encode()).decode()
+            try:
+                text = request.form.get("text-encryption")
+                key = load_key()
+                fernet = Fernet(key)
+                encrypted_text = fernet.encrypt(text.encode()).decode()
+            except:
+                return render_template('index.html', error="Er ging iets mis, probeer het nog een keer.")
             return render_template('index.html', encrypted_text=encrypted_text)
         elif request.form.get("text-decryption"):
-            text = request.form.get("text-decryption")
-            key = load_key()
-            fernet = Fernet(key)
-            decrypted_text = fernet.decrypt(text).decode()
-            return render_template('index.html', decrypted_text=decrypted_text)          
+            try:
+                text = request.form.get("text-decryption")
+                key = load_key()
+                fernet = Fernet(key)
+                decrypted_text = fernet.decrypt(text).decode()
+            except:
+                return render_template('index.html', error="Er ging iets mis, probeer het nog een keer.")
+            return render_template('index.html', decrypted_text=decrypted_text)        
     return render_template('index.html')
 
 if __name__ == '__main__':
