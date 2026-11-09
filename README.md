@@ -63,7 +63,13 @@ Deze key staat in een secret.key bestand waar alleen de 'owner' de rechten heeft
 De sleutel wordt alleen aangemaakt als de functie wordt aangeroepen in de terminal.
 
 ## Reflectie
+### Keuze Python Cryptography Fernet
+Ik ben erg blij met mijn keuze voor de python.cryptography.Fernet methode/library.
+Ik kon hierdoor namelijk op een makkelijke manier functies maken voor het genereren van een sleutel (en deze opslaan), het gebruiken van de sleutel voor encryptie en het gebruiken van de sleutel voor decryptie. 
+De keuze om er een Flask app van te maken ben ik ook erg tevreden over. Hierdoor kon ik op een gemakkelijke manier de variabelen en functies gebruiken in combinatie met de index.html template.
 
+De keuze voor het sleutelbeheer vind ik lastig. Ik denk dat het voor zo'n project een prima keuze is geweest om op deze manier de sleutel op te slaan, maar bij veel artikelen en persoonlijke aanbevelingen lees ik dat de andere opties (waar waarschijnlijk beter gebruik van gemaakt kan worden) gaan over het gebruiken van environment variables of een online vault service (zoals AWS secrets manager).
+Ik kon alleen niet op een snelle of gemakkelijke manier achterhalen hoe ik precies gebruik moest maken van de environment variables zonder direct de key in een file te moeten schrijven. (En de secret managers kosten vaak geld.) Daarom heb ik ervoor gekozen om toch door te gaan met het idee voor het wegschrijven naar een secret.key bestand. Mocht ik hier ooit nog een keer gebruik van maken lijkt het me een goede volgende stap om gebruik te maken van een andere manier, aangezien het sleutelbeheer (en dus het geheimhouden van de sleutel) als belangrijkste wordt gezien bij de Kerckhoffs principes.
 
 ## Bronnen
 - Cryptography. (z.d.). Fernet - symmetric encryption. Cryptography.io. 
